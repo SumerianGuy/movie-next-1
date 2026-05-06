@@ -1,0 +1,118 @@
+{
+  "countries": [
+    {
+      "code": "US",
+      "name": "United States",
+      "currency": "USD",
+      "host": "www.amazon.com"
+    },
+    {
+      "code": "CA",
+      "name": "Canada",
+      "currency": "CAD",
+      "host": "www.amazon.ca"
+    },
+    {
+      "code": "MX",
+      "name": "Mexico",
+      "currency": "MXN",
+      "host": "www.amazon.com.mx"
+    },
+    {
+      "code": "BR",
+      "name": "Brazil",
+      "currency": "BRL",
+      "host": "www.amazon.com.br"
+    },
+    {
+      "code": "GB",
+      "name": "United Kingdom",
+      "currency": "GBP",
+      "host": "www.amazon.co.uk"
+    },
+    {
+      "code": "DE",
+      "name": "Germany",
+      "currency": "EUR",
+      "host": "www.amazon.de"
+    },
+    {
+      "code": "FR",
+      "name": "France",
+      "currency": "EUR",
+      "host": "www.amazon.fr"
+    },
+    {
+      "code": "ES",
+      "name": "Spain",
+      "currency": "EUR",
+      "host": "www.amazon.es"
+    },
+    {
+      "code": "IT",
+      "name": "Italy",
+      "currency": "EUR",
+      "host": "www.amazon.it"
+    },
+    {
+      "code": "NL",
+      "name": "Netherlands",
+      "currency": "EUR",
+      "host": "www.amazon.nl"
+    },
+    {
+      "code": "SE",
+      "name": "Sweden",
+      "currency": "SEK",
+      "host": "www.amazon.se"
+    },
+    {
+      "code": "PL",
+      "name": "Poland",
+      "currency": "PLN",
+      "host": "www.amazon.pl"
+    },
+    {
+      "code": "AE",
+      "name": "United Arab Emirates",
+      "currency": "AED",
+      "host": "www.amazon.ae"
+    },
+    {
+      "code": "SA",
+      "name": "Saudi Arabia",
+      "currency": "SAR",
+      "host": "www.amazon.sa"
+    },
+    {
+      "code": "IN",
+      "name": "India",
+      "currency": "INR",
+      "host": "www.amazon.in"
+    },
+    {
+      "code": "JP",
+      "name": "Japan",
+      "currency": "JPY",
+      "host": "www.amazon.jp"
+    },
+    {
+      "code": "SG",
+      "name": "Singapore",
+      "currency": "SGD",
+      "host": "www.amazon.sg"
+    },
+    {
+      "code": "CN",
+      "name": "China",
+      "currency": "CNY",
+      "host": "www.amazon.cn"
+    },
+    {
+      "code": "AU",
+      "name": "Australia",
+      "currency": "AUD",
+      "host": "www.amazon.com.au"
+    }
+  ]
+}
