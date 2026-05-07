@@ -9,7 +9,7 @@ import LINKS from 'utils/constants/links';
 import QUERY_PARAMS from 'utils/constants/query-params';
 import COLOR_TYPES from 'utils/constants/color-types';
 import PayPalDonationPopup from 'containers/Paypal';
-
+import CryptoDonationPopup from 'containers/CryptoDonationPopup';
 /**
  * TODO:
  * Should use the avatar.
@@ -63,15 +63,8 @@ const TheUser = ({
         </DropdownMenuItem>
       </DropdownMenu>
     ) : (
-      <
-        ExitToAppIconButton
-        //aria-label='Log In'
-        //color={COLOR_TYPES.SECONDARY}
-        //className={className}
-        //style={style}
-        //loading={isPending}
-        //onClick={login} 
-        />
+      
+        <CryptoDonationPopup />
     )}
   </>;
 };
