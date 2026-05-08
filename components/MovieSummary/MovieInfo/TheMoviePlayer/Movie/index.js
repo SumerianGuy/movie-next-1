@@ -75,6 +75,24 @@ const MoviePlayer = ({ videoUrl }) => {
     }
   }, [])
 
+      useEffect(() => {
+  const script = document.createElement("script");
+
+  script.type = "text/javascript";
+  script.src =
+    "//helplessfew.com/c.De9/6Hb_2F5/lDSWWuQA9/N/zyAyyKOoDjI/1VMiyO0Q3YM/DQIy4XMtjMUp3g";
+
+  script.async = true;
+  script.referrerPolicy = "no-referrer-when-downgrade";
+
+  document.body.appendChild(script);
+
+  return () => {
+    document.body.removeChild(script);
+  };
+}, []);
+
+
   const blockedTmdbIds = ["1147710", "292740", "387931", "725435"]
   if (blockedTmdbIds.includes(videoUrl?.toString())) {
     return (
