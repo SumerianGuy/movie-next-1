@@ -51,6 +51,7 @@
     "@next/bundle-analyzer": "^14.1.4",
     "@svgr/webpack": "^8.1.0",
     "@zeit/next-source-maps": "0.0.3",
+    "baseline-browser-mapping": "^2.10.29",
     "cross-env": "^7.0.2",
     "eslint": "^7.4.0",
     "eslint-config-next": "^11.0.1",
