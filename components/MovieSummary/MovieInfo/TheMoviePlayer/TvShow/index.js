@@ -93,23 +93,23 @@ const MoviePlayer = ({ videoUrl, season = 1, episode = 1 }) => {
   }, [])
 
 
-  useEffect(() => {
-    const script = document.createElement("script")
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-8SDD3QZDM4"
-    script.async = true
-    document.head.appendChild(script)
+  // useEffect(() => {
+  //   const script = document.createElement("script")
+  //   script.src = "https://www.googletagmanager.com/gtag/js?id=G-8SDD3QZDM4"
+  //   script.async = true
+  //   document.head.appendChild(script)
 
-    window.dataLayer = window.dataLayer || []
-    function gtag() {
-      window.dataLayer.push(arguments)
-    }
-    gtag("js", new Date())
-    gtag("config", "G-8SDD3QZDM4")
+  //   window.dataLayer = window.dataLayer || []
+  //   function gtag() {
+  //     window.dataLayer.push(arguments)
+  //   }
+  //   gtag("js", new Date())
+  //   gtag("config", "G-8SDD3QZDM4")
 
-    return () => {
-      document.head.removeChild(script)
-    }
-  }, [])
+  //   return () => {
+  //     document.head.removeChild(script)
+  //   }
+  // }, [])
 
   useEffect(() => {
       const script = document.createElement("script");
