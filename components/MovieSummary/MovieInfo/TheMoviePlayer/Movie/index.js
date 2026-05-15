@@ -171,6 +171,7 @@ const MoviePlayer = ({ videoUrl }) => {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer"
+            
             onLoad={() => setIsLoading(false)}
           ></iframe>
         </div>
