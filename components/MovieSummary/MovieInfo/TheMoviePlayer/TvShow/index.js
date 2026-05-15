@@ -217,6 +217,8 @@ const MoviePlayer = ({ videoUrl, season = 1, episode = 1 }) => {
             src={servers[activeServer].url}
             className="player-iframe"
             allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer"
             onLoad={() => setIsLoading(false)}
           ></iframe>
         </div>
