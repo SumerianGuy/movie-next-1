@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Cookies from "js-cookie"
 
 const MoviePlayer = ({ videoUrl }) => {
-  const servers = [
+const servers = [
     {
       name: "VidSrcMe",
       url: `https://vidsrcme.ru/v2/embed/movie/${videoUrl}?autoPlay=true`,
@@ -29,10 +29,7 @@ const MoviePlayer = ({ videoUrl }) => {
       name: "videasy",
       url: `https://player.videasy.net/movie/${videoUrl}`,
     },
-    {
-      name: "111Movies",
-      url: `https://111movies.net/movie/${videoUrl}`,
-    },
+    
   ]
 
   const [activeServer, setActiveServer] = useState(0)
