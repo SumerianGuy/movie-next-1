@@ -29,7 +29,10 @@ const MoviePlayer = ({ videoUrl }) => {
       name: "videasy",
       url: `https://player.videasy.net/movie/${videoUrl}`,
     },
-    
+    {
+      name: "111Movies",
+      url: `https://111movies.net/movie/${videoUrl}`,
+    },
   ]
 
   const [activeServer, setActiveServer] = useState(0)
