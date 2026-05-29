@@ -7,7 +7,7 @@ const MoviePlayer = ({ videoUrl }) => {
   const servers = [
     {
       name: "VidSrcMe",
-      url: `https://vidsrcme.ru/v2/embed/movie/${videoUrl}?autoPlay=true`,
+      url: `https://vidsrcme.ru/embed/movie/${videoUrl}?autoPlay=true`,
     },
     {
       name: "VidSrcMe",
