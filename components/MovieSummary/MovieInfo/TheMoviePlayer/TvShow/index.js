@@ -52,28 +52,36 @@ const MoviePlayer = ({ videoUrl, season = 1, episode = 1 }) => {
   const generateServers = () => {
     const servers = [
       {
-        name: "VidSrcMe",
-        url: `https://vidsrc-embed.ru/embed/tv?tmdb=${videoUrl}&season=${season}&episode=${episode}`,
+        name: "VidSrcMe 1",
+        url: `https://vidsrcme.ru/embed/tv?tmdb=${videoUrl}&season=${season}&episode=${episode}`,
+      },
+      {
+        name: "VidSrcMe 2",
+        url: `https://vidsrcme.su/embed/tv?tmdb=${videoUrl}&season=${season}&episode=${episode}`,
+      },
+      {
+        name: "vidsrc-me 3",
+        url: `https://vidsrc-me.ru/embed/tv?tmdb=${videoUrl}&season=${season}&episode=${episode}`,
+      },
+      {
+        name: "vidsrc-me 4",
+        url: `https://vidsrc-me.su/embed/tv?tmdb=${videoUrl}&season=${season}&episode=${episode}`,
+      },
+      {
+        name: "vsembed",
+        url: `https://vsembed.ru/embed/tv?tmdb=${videoUrl}&season=${season}&episode=${episode}`,
       },
       {
         name: "CC",
-        url: `https://vidsrc.cc/v2/embed/tv/${videoUrl}/${season}/${episode}?autoPlay=true`,
-      },
-      {
-        name: "VidSrcMe",
-        url: `https://vidsrc.me/embed/tv?tmdb=${videoUrl}&season=${season}&episode=${episode}`,
-      },
-      {
-        name: "Embed.su",
-        url: `https://embed.su/embed/tv/${videoUrl}/${season}/${episode}`,
+        url: `https://vidsrc.win/watch/${videoUrl}/${season}/${episode}?autoPlay=true`,
       },
       {
         name: "111Movies",
-        url: `https://111movies.com/tv/${videoUrl}/${season}/${episode}`,
+        url: `https://111movies.net/tv/${videoUrl}/${season}/${episode}`,
       },
       {
-        name: "MoviesAPI",
-        url: `https://moviesapi.club/tv/${videoUrl}-${season}-${episode}`,
+        name: "videasy",
+        url: `https://player.videasy.net/tv/${videoUrl}/${season}/${episode}?nextEpisode=true&autoplayNextEpisode=true&episodeSelector=true&color=#E50914`,
       },
     ]
 

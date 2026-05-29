@@ -7,32 +7,29 @@ const MoviePlayer = ({ videoUrl }) => {
   const servers = [
     {
       name: "VidSrcMe",
-      url: `https://vidsrc.cc/v2/embed/movie/${videoUrl}?autoPlay=true`,
+      url: `https://vidsrcme.ru/v2/embed/movie/${videoUrl}?autoPlay=true`,
     },
     {
       name: "VidSrcMe",
-      url: `https://vidsrc.xyz/embed/movie/${videoUrl}`,
+      url: `https://vidsrcme.su/embed/movie/${videoUrl}`,
     },
     {
       name: "VidSrcMe",
-      url: `https://vidsrc.me/embed/movie?tmdb=${videoUrl}`,
+      url: `https://vidsrc-me.ru/embed/movie?tmdb=${videoUrl}`,
     },
     {
       name: "vidsrcru",
-      url: `https://vidsrc-embed.ru/embed/movie/${videoUrl}`,
+      url: `https://vidsrc-me.su/embed/movie/${videoUrl}`,
     },
     {
-      name: "Embed.su",
-      url: `https://embed.su/embed/movie/${videoUrl}`,
+      name: "vsembed",
+      url: `https://vsembed.ru/embed/movie/${videoUrl}`,
     },
     {
-      name: "MoviesAPI",
-      url: `https://moviesapi.club/movie/${videoUrl}`,
+      name: "videasy",
+      url: `https://player.videasy.net/movie/${videoUrl}`,
     },
-    {
-      name: "111Movies",
-      url: `https://111movies.com/movie/${videoUrl}`,
-    },
+    
   ]
 
   const [activeServer, setActiveServer] = useState(0)
