@@ -40,9 +40,22 @@ const MoviePlayer = ({ videoUrl }) => {
 
   useEffect(() => {
     const savedServer = Cookies.get("activeMovieServer")
-    if (savedServer !== undefined && savedServer !== null) {
-      setActiveServer(Number.parseInt(savedServer))
+
+    if (!savedServer) return
+
+    const index = Number.parseInt(savedServer, 10)
+
+    if (
+      Number.isNaN(index) ||
+      index < 0 ||
+      index >= servers.length
+    ) {
+      Cookies.remove("activeMovieServer")
+      setActiveServer(0)
+      return
     }
+
+    setActiveServer(index)
   }, [])
 
 
@@ -80,12 +93,6 @@ const MoviePlayer = ({ videoUrl }) => {
         document.body.removeChild(script);
       };
     }, []);
-
-
-
-
-
-
 
 
   const blockedTmdbIds = ["1147710", "292740", "387931", "725435"]
