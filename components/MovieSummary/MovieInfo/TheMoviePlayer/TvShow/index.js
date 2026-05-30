@@ -81,7 +81,7 @@ const MoviePlayer = ({ videoUrl, season = 1, episode = 1 }) => {
       },
       {
         name: "videasy",
-        url: `https://player.videasy.net/tv/${videoUrl}/${season}/${episode}?nextEpisode=true&autoplayNextEpisode=true&episodeSelector=true&color=#E50914`,
+        url: `https://player.videasy.net/tv/${videoUrl}/${season}/${episode}?nextEpisode=false&autoplayNextEpisode=false&episodeSelector=false&color=#E50914`,
       },
     ]
 
