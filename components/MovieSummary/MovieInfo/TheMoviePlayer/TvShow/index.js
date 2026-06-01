@@ -71,16 +71,16 @@ const MoviePlayer = ({ videoUrl, season = 1, episode = 1 }) => {
         name: "vsembed",
         url: `https://vsembed.ru/embed/tv?tmdb=${videoUrl}&season=${season}&episode=${episode}`,
       },
-      // {
-      //   name: "CC",
-      //   url: `https://vidsrc.win/watch/${videoUrl}/${season}/${episode}?autoPlay=true`,
-      // },
+      {
+        name: "CC",
+        url: `https://vidsrc.win/watch/${videoUrl}/${season}/${episode}?autoPlay=true`,
+      },
       {
         name: "111Movies",
         url: `https://111movies.net/tv/${videoUrl}/${season}/${episode}`,
       },
       {
-        name: "FullHD",
+        name: "videasy",
         url: `https://player.videasy.net/tv/${videoUrl}/${season}/${episode}?nextEpisode=false&autoplayNextEpisode=false&episodeSelector=false&color=#E50914`,
       },
     ]
