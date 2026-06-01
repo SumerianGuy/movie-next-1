@@ -32,9 +32,6 @@ const MoviePlayer = ({ videoUrl }) => {
     {
       name: "111Movies",
       url: `https://111movies.net/movie/${videoUrl}`,
-    },    {
-      name: "FullHD",
-      url: `https://player.videasy.net/movie/${videoUrl}`,
     },
   ]
 
