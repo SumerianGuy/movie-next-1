@@ -59,23 +59,19 @@ const MoviePlayer = ({ videoUrl }) => {
   }, [])
 
 
-  // useEffect(() => {
-  //   const script = document.createElement("script")
-  //   script.src = "https://www.googletagmanager.com/gtag/js?id=G-8SDD3QZDM4"
-  //   script.async = true
-  //   document.head.appendChild(script)
+  useEffect(() => {
+    const script = document.createElement("script");
 
-  //   window.dataLayer = window.dataLayer || []
-  //   function gtag() {
-  //     window.dataLayer.push(arguments)
-  //   }
-  //   gtag("js", new Date())
-  //   gtag("config", "G-8SDD3QZDM4")
+    script.type = "text/javascript";
+    script.src = "https://s0-greate.net/p/1448255";
+    script.async = true;
 
-  //   return () => {
-  //     document.head.removeChild(script)
-  //   }
-  // }, [])
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   useEffect(() => {
       const script = document.createElement("script");
