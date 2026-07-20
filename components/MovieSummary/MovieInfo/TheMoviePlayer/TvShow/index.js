@@ -15,7 +15,6 @@ const MoviePlayer = ({ videoUrl, season = 1, episode = 1 }) => {
   const [seasonId, setSeasonId] = useState(null)
   const [selectedEpisode, setSelectedEpisode] = useState(null)
   const [episodeInfo, setEpisodeInfo] = useState(null)
-  const firstAdShown = useRef(false);
 
   useEffect(() => {
     const { season: seasonQueryParam, episode: episodeQueryParam } = router.query
@@ -120,32 +119,32 @@ const MoviePlayer = ({ videoUrl, season = 1, episode = 1 }) => {
   //   }
   // }, [])
 
-  useEffect(() => {
-    const handleSecondClick = () => {
-      // Remove listener immediately so it only runs once
-      document.removeEventListener("click", handleSecondClick);
+useEffect(() => {
+  const handleSecondClick = () => {
+    // Remove listener immediately so it only runs once
+    document.removeEventListener("click", handleSecondClick);
 
-      setTimeout(() => {
-        const script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src =
-          "//helplessfew.com/c.De9/6Hb_2F5/lDSWWuQA9/N/zyAyyKOoDjI/1VMiyO0Q3YM/DQIy4XMtjMUp3g";
-        script.async = true;
-        script.referrerPolicy = "no-referrer-when-downgrade";
+    setTimeout(() => {
+      const script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src =
+        "//helplessfew.com/c.De9/6Hb_2F5/lDSWWuQA9/N/zyAyyKOoDjI/1VMiyO0Q3YM/DQIy4XMtjMUp3g";
+      script.async = true;
+      script.referrerPolicy = "no-referrer-when-downgrade";
 
-        document.body.appendChild(script);
-      }, 6000); // 6 seconds after the click
-    };
+      document.body.appendChild(script);
+    }, 6000); // 6 seconds after the click
+  };
 
-    const timer = setTimeout(() => {
-      document.addEventListener("click", handleSecondClick);
-    }, 5000); // Wait 5 seconds before listening for clicks
+  const timer = setTimeout(() => {
+    document.addEventListener("click", handleSecondClick);
+  }, 5000); // Wait 5 seconds before listening for clicks
 
-    return () => {
-      clearTimeout(timer);
-      document.removeEventListener("click", handleSecondClick);
-    };
-  }, []);
+  return () => {
+    clearTimeout(timer);
+    document.removeEventListener("click", handleSecondClick);
+  };
+}, []);
 
 
 
