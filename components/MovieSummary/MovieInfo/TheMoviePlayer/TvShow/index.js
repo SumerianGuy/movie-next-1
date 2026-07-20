@@ -121,32 +121,30 @@ const MoviePlayer = ({ videoUrl, season = 1, episode = 1 }) => {
   // }, [])
 
   useEffect(() => {
-    const handleClick = () => {
-      if (!firstAdShown.current) {
-        firstAdShown.current = true;
+    const handleSecondClick = () => {
+      // Remove listener immediately so it only runs once
+      document.removeEventListener("click", handleSecondClick);
 
+      setTimeout(() => {
         const script = document.createElement("script");
-        script.src = "https://s0-greate.net/p/2976373";
+        script.type = "text/javascript";
+        script.src =
+          "//helplessfew.com/c.De9/6Hb_2F5/lDSWWuQA9/N/zyAyyKOoDjI/1VMiyO0Q3YM/DQIy4XMtjMUp3g";
         script.async = true;
+        script.referrerPolicy = "no-referrer-when-downgrade";
 
         document.body.appendChild(script);
-        return;
-      }
-
-      const script = document.createElement("script");
-      script.src =
-        "//helplessfew.com/c.De9/6Hb_2F5/lDSWWuQA9/N/zyAyyKOoDjI/1VMiyO0Q3YM/DQIy4XMtjMUp3g";
-      script.async = true;
-      script.referrerPolicy = "no-referrer-when-downgrade";
-
-      document.body.appendChild(script);
-
-      document.removeEventListener("click", handleClick);
+      }, 6000); // 6 seconds after the click
     };
 
-    document.addEventListener("click", handleClick);
+    const timer = setTimeout(() => {
+      document.addEventListener("click", handleSecondClick);
+    }, 5000); // Wait 5 seconds before listening for clicks
 
-    return () => document.removeEventListener("click", handleClick);
+    return () => {
+      clearTimeout(timer);
+      document.removeEventListener("click", handleSecondClick);
+    };
   }, []);
 
 
