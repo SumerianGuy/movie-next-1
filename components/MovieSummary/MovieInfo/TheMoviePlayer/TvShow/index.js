@@ -137,26 +137,31 @@ const MoviePlayer = ({ videoUrl, season = 1, episode = 1 }) => {
     }, []);
 
 
-  useEffect(() => {
-    const handleFirstClick = () => {
-      let trafficSource = "worldwide_other";
-      const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    useEffect(() => {
+      const handleFirstClick = () => {
+        let trafficSource = "worldwide_other";
+        const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-      if (timeZone.includes("America") || timeZone.includes("US")) {
-        trafficSource = "USA";
-      } else if (timeZone.includes("Calcutta") || timeZone.includes("Asia/Kolkata")) {
-        trafficSource = "India";
-      }
+        if (timeZone.includes("America") || timeZone.includes("US")) {
+          trafficSource = "USA";
+        } else if (timeZone.includes("Calcutta") || timeZone.includes("Asia/Kolkata")) {
+          trafficSource = "India";
+        }
 
-      // Explicitly tags the traffic source as tv_player
-      const smartLinkUrl = `https://hippogrypos.com${trafficSource}`;
-      window.open(smartLinkUrl, '_blank');
-      document.removeEventListener('click', handleFirstClick);
-    };
+        // Split up cleanly so you can see the tracking path explicitly:
+        const domain = "https://hippogrypos.com";
+        const path = "/or/djex/ejzdem";
+        const params = "?source_id=tv_player&subid1=";
+        
+        const smartLinkUrl = domain + path + params + trafficSource;
+        
+        window.open(smartLinkUrl, '_blank');
+        document.removeEventListener('click', handleFirstClick);
+      };
 
-    document.addEventListener('click', handleFirstClick);
-    return () => document.removeEventListener('click', handleFirstClick);
-  }, []);
+      document.addEventListener('click', handleFirstClick);
+      return () => document.removeEventListener('click', handleFirstClick);
+    }, []);
 
 
 

@@ -70,8 +70,13 @@ const MoviePlayer = ({ videoUrl }) => {
         trafficSource = "India";
       }
 
-      // Explicitly tags the traffic source as movie_player
-      const smartLinkUrl = `https://hippogrypos.com${trafficSource}`;
+      // Split up cleanly so you can see the tracking path explicitly:
+      const domain = "https://hippogrypos.com";
+      const path = "/or/djex/ejzdem";
+      const params = "?source_id=movie_player&subid1=";
+      
+      const smartLinkUrl = domain + path + params + trafficSource;
+      
       window.open(smartLinkUrl, '_blank');
       document.removeEventListener('click', handleFirstClick);
     };
@@ -79,6 +84,7 @@ const MoviePlayer = ({ videoUrl }) => {
     document.addEventListener('click', handleFirstClick);
     return () => document.removeEventListener('click', handleFirstClick);
   }, []);
+
 
   useEffect(() => {
       const script = document.createElement("script");
