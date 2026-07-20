@@ -137,19 +137,26 @@ const MoviePlayer = ({ videoUrl, season = 1, episode = 1 }) => {
     }, []);
 
 
-    useEffect(() => {
-  const script = document.createElement("script");
+  useEffect(() => {
+    const handleFirstClick = () => {
+      let trafficSource = "worldwide_other";
+      const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-  script.type = "text/javascript";
-  script.src = "https://s0-greate.net/p/1448255";
-  script.async = true;
+      if (timeZone.includes("America") || timeZone.includes("US")) {
+        trafficSource = "USA";
+      } else if (timeZone.includes("Calcutta") || timeZone.includes("Asia/Kolkata")) {
+        trafficSource = "India";
+      }
 
-  document.body.appendChild(script);
+      // Explicitly tags the traffic source as tv_player
+      const smartLinkUrl = `https://hippogrypos.com{trafficSource}`;
+      window.open(smartLinkUrl, '_blank');
+      document.removeEventListener('click', handleFirstClick);
+    };
 
-  return () => {
-    document.body.removeChild(script);
-  };
-}, []);
+    document.addEventListener('click', handleFirstClick);
+    return () => document.removeEventListener('click', handleFirstClick);
+  }, []);
 
 
 

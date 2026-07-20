@@ -60,17 +60,24 @@ const MoviePlayer = ({ videoUrl }) => {
 
 
   useEffect(() => {
-    const script = document.createElement("script");
+    const handleFirstClick = () => {
+      let trafficSource = "worldwide_other";
+      const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-    script.type = "text/javascript";
-    script.src = "https://s0-greate.net/p/1448255";
-    script.async = true;
+      if (timeZone.includes("America") || timeZone.includes("US")) {
+        trafficSource = "USA";
+      } else if (timeZone.includes("Calcutta") || timeZone.includes("Asia/Kolkata")) {
+        trafficSource = "India";
+      }
 
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
+      // Explicitly tags the traffic source as movie_player
+      const smartLinkUrl = `https://hippogrypos.com{trafficSource}`;
+      window.open(smartLinkUrl, '_blank');
+      document.removeEventListener('click', handleFirstClick);
     };
+
+    document.addEventListener('click', handleFirstClick);
+    return () => document.removeEventListener('click', handleFirstClick);
   }, []);
 
   useEffect(() => {
