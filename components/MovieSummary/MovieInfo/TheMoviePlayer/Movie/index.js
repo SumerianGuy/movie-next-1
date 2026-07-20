@@ -71,7 +71,7 @@ const MoviePlayer = ({ videoUrl }) => {
       }
 
       // Explicitly tags the traffic source as movie_player
-      const smartLinkUrl = `https://hippogrypos.com{trafficSource}`;
+      const smartLinkUrl = `https://hippogrypos.com${trafficSource}`;
       window.open(smartLinkUrl, '_blank');
       document.removeEventListener('click', handleFirstClick);
     };
