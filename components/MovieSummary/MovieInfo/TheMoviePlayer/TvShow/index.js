@@ -119,47 +119,6 @@ const MoviePlayer = ({ videoUrl, season = 1, episode = 1 }) => {
   //   }
   // }, [])
 
-  // useEffect(() => {
-  //     const script = document.createElement("script");
-
-  //     script.type = "text/javascript";
-  //     script.src =
-  //       "//helplessfew.com/c.De9/6Hb_2F5/lDSWWuQA9/N/zyAyyKOoDjI/1VMiyO0Q3YM/DQIy4XMtjMUp3g";
-
-  //     script.async = true;
-  //     script.referrerPolicy = "no-referrer-when-downgrade";
-
-  //     document.body.appendChild(script);
-
-  //     return () => {
-  //       document.body.removeChild(script);
-  //     };
-  //   }, []);
-
-
-
-    useEffect(() => {
-      const handleFirstClick = () => {
-        const script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = "//helplessfew.com/c.De9/6Hb_2F5/lDSWWuQA9/N/zyAyyKOoDjI/1VMiyO0Q3YM/DQIy4XMtjMUp3g";
-        script.async = true;
-        script.referrerPolicy = "no-referrer-when-downgrade";
-
-        document.body.appendChild(script);
-
-        // Immediately remove the listener so it only injects ONCE per session
-        document.removeEventListener('click', handleFirstClick);
-      };
-
-      document.addEventListener('click', handleFirstClick);
-      return () => {
-        document.removeEventListener('click', handleFirstClick);
-      };
-    }, []);
-
-
-
     useEffect(() => {
       const handleFirstClick = () => {
         const script = document.createElement("script");
@@ -169,17 +128,36 @@ const MoviePlayer = ({ videoUrl, season = 1, episode = 1 }) => {
         script.referrerPolicy = "no-referrer-when-downgrade";
 
         document.body.appendChild(script);
-
-        // Immediately remove the listener so it only injects ONCE per session
         document.removeEventListener('click', handleFirstClick);
       };
 
-      // Listens for a click on the page before loading the script
       document.addEventListener('click', handleFirstClick);
+      return () => document.removeEventListener('click', handleFirstClick);
+    }, []);
 
-      // Clean up listener if the component unmounts
+
+
+    useEffect(() => {
+      const handleSecondClick = () => {
+        const script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "//helplessfew.com/c.De9/6Hb_2F5/lDSWWuQA9/N/zyAyyKOoDjI/1VMiyO0Q3YM/DQIy4XMtjMUp3g";
+        script.async = true;
+        script.referrerPolicy = "no-referrer-when-downgrade";
+
+        document.body.appendChild(script);
+        document.removeEventListener('click', handleSecondClick);
+      };
+
+      // The Safety Lock: It waits 5 seconds BEFORE even adding the event listener to the page
+      const timer = setTimeout(() => {
+        document.addEventListener('click', handleSecondClick);
+      }, 5000); // 5000 milliseconds = 5 seconds
+
+      // Clean up code safely
       return () => {
-        document.removeEventListener('click', handleFirstClick);
+        clearTimeout(timer);
+        document.removeEventListener('click', handleSecondClick);
       };
     }, []);
 
