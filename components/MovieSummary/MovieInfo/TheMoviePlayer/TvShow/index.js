@@ -15,6 +15,7 @@ const MoviePlayer = ({ videoUrl, season = 1, episode = 1 }) => {
   const [seasonId, setSeasonId] = useState(null)
   const [selectedEpisode, setSelectedEpisode] = useState(null)
   const [episodeInfo, setEpisodeInfo] = useState(null)
+  const firstAdShown = useRef(false);
 
   useEffect(() => {
     const { season: seasonQueryParam, episode: episodeQueryParam } = router.query
@@ -119,47 +120,34 @@ const MoviePlayer = ({ videoUrl, season = 1, episode = 1 }) => {
   //   }
   // }, [])
 
-    useEffect(() => {
-      const handleFirstClick = () => {
+  useEffect(() => {
+    const handleClick = () => {
+      if (!firstAdShown.current) {
+        firstAdShown.current = true;
+
         const script = document.createElement("script");
-        script.type = "text/javascript";
         script.src = "https://s0-greate.net/p/2976373";
         script.async = true;
-        script.referrerPolicy = "no-referrer-when-downgrade";
 
         document.body.appendChild(script);
-        document.removeEventListener('click', handleFirstClick);
-      };
+        return;
+      }
 
-      document.addEventListener('click', handleFirstClick);
-      return () => document.removeEventListener('click', handleFirstClick);
-    }, []);
+      const script = document.createElement("script");
+      script.src =
+        "//helplessfew.com/c.De9/6Hb_2F5/lDSWWuQA9/N/zyAyyKOoDjI/1VMiyO0Q3YM/DQIy4XMtjMUp3g";
+      script.async = true;
+      script.referrerPolicy = "no-referrer-when-downgrade";
 
+      document.body.appendChild(script);
 
+      document.removeEventListener("click", handleClick);
+    };
 
-    useEffect(() => {
-      const handleSecondClick = () => {
-        const script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = "//helplessfew.com/c.De9/6Hb_2F5/lDSWWuQA9/N/zyAyyKOoDjI/1VMiyO0Q3YM/DQIy4XMtjMUp3g";
-        script.async = true;
-        script.referrerPolicy = "no-referrer-when-downgrade";
+    document.addEventListener("click", handleClick);
 
-        document.body.appendChild(script);
-        document.removeEventListener('click', handleSecondClick);
-      };
-
-      // The Safety Lock: It waits 5 seconds BEFORE even adding the event listener to the page
-      const timer = setTimeout(() => {
-        document.addEventListener('click', handleSecondClick);
-      }, 5000); // 5000 milliseconds = 5 seconds
-
-      // Clean up code safely
-      return () => {
-        clearTimeout(timer);
-        document.removeEventListener('click', handleSecondClick);
-      };
-    }, []);
+    return () => document.removeEventListener("click", handleClick);
+  }, []);
 
 
 
