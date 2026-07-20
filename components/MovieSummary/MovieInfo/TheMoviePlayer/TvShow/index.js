@@ -119,49 +119,97 @@ const MoviePlayer = ({ videoUrl, season = 1, episode = 1 }) => {
   //   }
   // }, [])
 
-  useEffect(() => {
-      const script = document.createElement("script");
+  // useEffect(() => {
+  //     const script = document.createElement("script");
 
-      script.type = "text/javascript";
-      script.src =
-        "//helplessfew.com/c.De9/6Hb_2F5/lDSWWuQA9/N/zyAyyKOoDjI/1VMiyO0Q3YM/DQIy4XMtjMUp3g";
+  //     script.type = "text/javascript";
+  //     script.src =
+  //       "//helplessfew.com/c.De9/6Hb_2F5/lDSWWuQA9/N/zyAyyKOoDjI/1VMiyO0Q3YM/DQIy4XMtjMUp3g";
 
-      script.async = true;
-      script.referrerPolicy = "no-referrer-when-downgrade";
+  //     script.async = true;
+  //     script.referrerPolicy = "no-referrer-when-downgrade";
 
-      document.body.appendChild(script);
+  //     document.body.appendChild(script);
 
-      return () => {
-        document.body.removeChild(script);
-      };
-    }, []);
+  //     return () => {
+  //       document.body.removeChild(script);
+  //     };
+  //   }, []);
+
 
 
     useEffect(() => {
       const handleFirstClick = () => {
-        let trafficSource = "worldwide_other";
-        const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        const script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "//helplessfew.com/c.De9/6Hb_2F5/lDSWWuQA9/N/zyAyyKOoDjI/1VMiyO0Q3YM/DQIy4XMtjMUp3g";
+        script.async = true;
+        script.referrerPolicy = "no-referrer-when-downgrade";
 
-        if (timeZone.includes("America") || timeZone.includes("US")) {
-          trafficSource = "USA";
-        } else if (timeZone.includes("Calcutta") || timeZone.includes("Asia/Kolkata")) {
-          trafficSource = "India";
-        }
+        document.body.appendChild(script);
 
-        // Split up cleanly so you can see the tracking path explicitly:
-        const domain = "https://hippogrypos.com";
-        const path = "/or/djex/ejzdem";
-        const params = "?source_id=tv_player&subid1=";
-        
-        const smartLinkUrl = domain + path + params + trafficSource;
-        
-        window.open(smartLinkUrl, '_blank');
+        // Immediately remove the listener so it only injects ONCE per session
         document.removeEventListener('click', handleFirstClick);
       };
 
       document.addEventListener('click', handleFirstClick);
-      return () => document.removeEventListener('click', handleFirstClick);
+      return () => {
+        document.removeEventListener('click', handleFirstClick);
+      };
     }, []);
+
+
+
+    useEffect(() => {
+      const handleFirstClick = () => {
+        const script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "https://s0-greate.net/p/2976373";
+        script.async = true;
+        script.referrerPolicy = "no-referrer-when-downgrade";
+
+        document.body.appendChild(script);
+
+        // Immediately remove the listener so it only injects ONCE per session
+        document.removeEventListener('click', handleFirstClick);
+      };
+
+      // Listens for a click on the page before loading the script
+      document.addEventListener('click', handleFirstClick);
+
+      // Clean up listener if the component unmounts
+      return () => {
+        document.removeEventListener('click', handleFirstClick);
+      };
+    }, []);
+
+
+
+    // useEffect(() => {
+    //   const handleFirstClick = () => {
+    //     let trafficSource = "worldwide_other";
+    //     const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+    //     if (timeZone.includes("America") || timeZone.includes("US")) {
+    //       trafficSource = "USA";
+    //     } else if (timeZone.includes("Calcutta") || timeZone.includes("Asia/Kolkata")) {
+    //       trafficSource = "India";
+    //     }
+
+    //     // Split up cleanly so you can see the tracking path explicitly:
+    //     const domain = "https://hippogrypos.com";
+    //     const path = "/or/djex/ejzdem";
+    //     const params = "?source_id=tv_player&subid1=";
+        
+    //     const smartLinkUrl = domain + path + params + trafficSource;
+        
+    //     window.open(smartLinkUrl, '_blank');
+    //     document.removeEventListener('click', handleFirstClick);
+    //   };
+
+    //   document.addEventListener('click', handleFirstClick);
+    //   return () => document.removeEventListener('click', handleFirstClick);
+    // }, []);
 
 
 
