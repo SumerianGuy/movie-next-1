@@ -59,32 +59,52 @@ const MoviePlayer = ({ videoUrl }) => {
   }, [])
 
 
+  // useEffect(() => {
+  //   const handleFirstClick = () => {
+  //     let trafficSource = "worldwide_other";
+  //     const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+  //     if (timeZone.includes("America") || timeZone.includes("US")) {
+  //       trafficSource = "USA";
+  //     } else if (timeZone.includes("Calcutta") || timeZone.includes("Asia/Kolkata")) {
+  //       trafficSource = "India";
+  //     }
+
+  //     // Split up cleanly so you can see the tracking path explicitly:
+  //     const domain = "https://hippogrypos.com";
+  //     const path = "/or/djex/ejzdem";
+  //     const params = "?source_id=movie_player&subid1=";
+      
+  //     const smartLinkUrl = domain + path + params + trafficSource;
+      
+  //     window.open(smartLinkUrl, '_blank');
+  //     document.removeEventListener('click', handleFirstClick);
+  //   };
+
+  //   document.addEventListener('click', handleFirstClick);
+  //   return () => document.removeEventListener('click', handleFirstClick);
+  // }, []);
+
+
+    // First ad - first click
   useEffect(() => {
     const handleFirstClick = () => {
-      let trafficSource = "worldwide_other";
-      const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      const script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "https://s0-greate.net/p/2976373";
+      script.async = true;
+      script.referrerPolicy = "no-referrer-when-downgrade";
 
-      if (timeZone.includes("America") || timeZone.includes("US")) {
-        trafficSource = "USA";
-      } else if (timeZone.includes("Calcutta") || timeZone.includes("Asia/Kolkata")) {
-        trafficSource = "India";
-      }
-
-      // Split up cleanly so you can see the tracking path explicitly:
-      const domain = "https://hippogrypos.com";
-      const path = "/or/djex/ejzdem";
-      const params = "?source_id=movie_player&subid1=";
-      
-      const smartLinkUrl = domain + path + params + trafficSource;
-      
-      window.open(smartLinkUrl, '_blank');
-      document.removeEventListener('click', handleFirstClick);
+      document.body.appendChild(script);
+      document.removeEventListener("click", handleFirstClick);
     };
 
-    document.addEventListener('click', handleFirstClick);
-    return () => document.removeEventListener('click', handleFirstClick);
-  }, []);
+    document.addEventListener("click", handleFirstClick);
 
+    return () => {
+      document.removeEventListener("click", handleFirstClick);
+    };
+  }, []);
 
   useEffect(() => {
       const script = document.createElement("script");
