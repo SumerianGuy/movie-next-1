@@ -148,8 +148,7 @@ const MoviePlayer = ({ videoUrl, season = 1, episode = 1 }) => {
       setTimeout(() => {
         const script = document.createElement("script");
         script.type = "text/javascript";
-        script.src =
-          "//helplessfew.com/c.De9/6Hb_2F5/lDSWWuQA9/N/zyAyyKOoDjI/1VMiyO0Q3YM/DQIy4XMtjMUp3g";
+        script.src = "/antiadblock.js";
         script.async = true;
         script.referrerPolicy = "no-referrer-when-downgrade";
 

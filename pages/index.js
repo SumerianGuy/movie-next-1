@@ -115,6 +115,9 @@ const Home = () => {
           content="Watch movies and TV shows online in HD quality for free on Flixwave."
         />
 
+        {/* HilltopsAdsBoost */}
+        <meta name="referrer" content="no-referrer-when-downgrade" />
+
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1"

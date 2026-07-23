@@ -47,7 +47,7 @@ const TvSeasonsSection = ({ className, movie }) => {
     const seasonNumber = event.target.value
     if (seasonNumber !== "0") {
       setSeasonNumber(seasonNumber)
-      setSelectedEpisode(null)
+      setSelectedEpisode("")
     }
   }
 
