@@ -120,51 +120,37 @@ const MoviePlayer = ({ videoUrl, season = 1, episode = 1 }) => {
   // }, [])
 
   // First ad - first click
-  useEffect(() => {
-    const handleFirstClick = () => {
-      const script = document.createElement("script");
-      script.type = "text/javascript";
-      script.src = "https://s0-greate.net/p/2976373";
-      script.async = true;
-      script.referrerPolicy = "no-referrer-when-downgrade";
+  // useEffect(() => {
+  //   const handleFirstClick = () => {
+  //     const script = document.createElement("script");
+  //     script.type = "text/javascript";
+  //     script.src = "https://s0-greate.net/p/2976373";
+  //     script.async = true;
+  //     script.referrerPolicy = "no-referrer-when-downgrade";
 
-      document.body.appendChild(script);
-      document.removeEventListener("click", handleFirstClick);
-    };
+  //     document.body.appendChild(script);
+  //     document.removeEventListener("click", handleFirstClick);
+  //   };
 
-    document.addEventListener("click", handleFirstClick);
+  //   document.addEventListener("click", handleFirstClick);
 
-    return () => {
-      document.removeEventListener("click", handleFirstClick);
-    };
-  }, []);
+  //   return () => {
+  //     document.removeEventListener("click", handleFirstClick);
+  //   };
+  // }, []);
 
 
   // Second ad - 5s before listening, then 6s delay after click
   useEffect(() => {
-    const handleSecondClick = () => {
-      document.removeEventListener("click", handleSecondClick);
+  const script = document.createElement("script");
 
-      setTimeout(() => {
-        const script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = "/antiadblock.js";
-        script.async = true;
-        script.referrerPolicy = "no-referrer-when-downgrade";
+  script.src = "/antiadblock.js";
+  script.async = true;
 
-        document.body.appendChild(script);
-      }, 6000); // Wait 6 seconds after the click
-    };
+  document.body.appendChild(script);
 
-    const timer = setTimeout(() => {
-      document.addEventListener("click", handleSecondClick);
-    }, 5000); // Wait 5 seconds before enabling
-
-    return () => {
-      clearTimeout(timer);
-      document.removeEventListener("click", handleSecondClick);
-    };
-  }, []);
+  return () => script.remove();
+}, []);
 
 
     // useEffect(() => {

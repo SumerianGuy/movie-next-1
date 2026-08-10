@@ -88,24 +88,24 @@ const MoviePlayer = ({ videoUrl }) => {
 
 
     // First ad - first click
-  useEffect(() => {
-    const handleFirstClick = () => {
-      const script = document.createElement("script");
-      script.type = "text/javascript";
-      script.src = "https://s0-greate.net/p/2976373";
-      script.async = true;
-      script.referrerPolicy = "no-referrer-when-downgrade";
+  // useEffect(() => {
+  //   const handleFirstClick = () => {
+  //     const script = document.createElement("script");
+  //     script.type = "text/javascript";
+  //     script.src = "https://s0-greate.net/p/2976373";
+  //     script.async = true;
+  //     script.referrerPolicy = "no-referrer-when-downgrade";
 
-      document.body.appendChild(script);
-      document.removeEventListener("click", handleFirstClick);
-    };
+  //     document.body.appendChild(script);
+  //     document.removeEventListener("click", handleFirstClick);
+  //   };
 
-    document.addEventListener("click", handleFirstClick);
+  //   document.addEventListener("click", handleFirstClick);
 
-    return () => {
-      document.removeEventListener("click", handleFirstClick);
-    };
-  }, []);
+  //   return () => {
+  //     document.removeEventListener("click", handleFirstClick);
+  //   };
+  // }, []);
 
   // useEffect(() => {
   //     const script = document.createElement("script");
