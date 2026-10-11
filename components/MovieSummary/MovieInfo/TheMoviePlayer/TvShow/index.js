@@ -52,6 +52,10 @@ const MoviePlayer = ({ videoUrl, season = 1, episode = 1 }) => {
   const generateServers = () => {
     const servers = [
       {
+        name: "VidSrcSh",
+        url: `https://vidsrc.sh/embed/tv/${videoUrl}/${season}/${episode}`,
+      },
+      {
         name: "VidSrcMe 1",
         url: `https://vidsrcme.ru/embed/tv?tmdb=${videoUrl}&season=${season}&episode=${episode}`,
       },

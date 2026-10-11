@@ -5,7 +5,10 @@ import Cookies from "js-cookie"
 
 
 const MoviePlayer = ({ videoUrl }) => {
-  const servers = [
+  const servers = [{
+      name: "VidSrcSh",
+      url: `https://vidsrc.sh/embed/movie/${videoUrl}?autoPlay=true`,
+    },
     {
       name: "VidSrcMe",
       url: `https://vidsrcme.ru/embed/movie/${videoUrl}?autoPlay=true`,
