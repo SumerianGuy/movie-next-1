@@ -9,22 +9,7 @@ const MoviePlayer = ({ videoUrl }) => {
       name: "VidSrcSh",
       url: `https://vidsrc.sh/embed/movie/${videoUrl}?autoPlay=true`,
     },
-    {
-      name: "VidSrcMe",
-      url: `https://vidsrcme.ru/embed/movie/${videoUrl}?autoPlay=true`,
-    },
-    {
-      name: "VidSrcMe",
-      url: `https://vidsrcme.su/embed/movie/${videoUrl}`,
-    },
-    {
-      name: "VidSrcMe",
-      url: `https://vidsrc-me.ru/embed/movie?tmdb=${videoUrl}`,
-    },
-    {
-      name: "vidsrcru",
-      url: `https://vidsrc-me.su/embed/movie/${videoUrl}`,
-    },
+    
     {
       name: "vsembed",
       url: `https://vsembed.ru/embed/movie/${videoUrl}`,

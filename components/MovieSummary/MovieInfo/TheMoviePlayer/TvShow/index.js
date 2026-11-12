@@ -56,22 +56,6 @@ const MoviePlayer = ({ videoUrl, season = 1, episode = 1 }) => {
         url: `https://vidsrc.sh/embed/tv/${videoUrl}/${season}/${episode}`,
       },
       {
-        name: "VidSrcMe 1",
-        url: `https://vidsrcme.ru/embed/tv?tmdb=${videoUrl}&season=${season}&episode=${episode}`,
-      },
-      {
-        name: "VidSrcMe 2",
-        url: `https://vidsrcme.su/embed/tv?tmdb=${videoUrl}&season=${season}&episode=${episode}`,
-      },
-      {
-        name: "vidsrc-me 3",
-        url: `https://vidsrc-me.ru/embed/tv?tmdb=${videoUrl}&season=${season}&episode=${episode}`,
-      },
-      {
-        name: "vidsrc-me 4",
-        url: `https://vidsrc-me.su/embed/tv?tmdb=${videoUrl}&season=${season}&episode=${episode}`,
-      },
-      {
         name: "vsembed",
         url: `https://vsembed.ru/embed/tv?tmdb=${videoUrl}&season=${season}&episode=${episode}`,
       },
