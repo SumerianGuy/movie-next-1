@@ -52,6 +52,10 @@ const MoviePlayer = ({ videoUrl, season = 1, episode = 1 }) => {
   const generateServers = () => {
     const servers = [
       {
+        name: "111Movies",
+        url: `https://111movies.net/tv/${videoUrl}/${season}/${episode}`,
+      },
+      {
         name: "VidSrcSh",
         url: `https://vidsrc.sh/embed/tv/${videoUrl}/${season}/${episode}`,
       },
@@ -79,10 +83,6 @@ const MoviePlayer = ({ videoUrl, season = 1, episode = 1 }) => {
       //   name: "CC",
       //   url: `https://vidsrc.win/watch/${videoUrl}/${season}/${episode}?autoPlay=true`,
       // },
-      {
-        name: "111Movies",
-        url: `https://111movies.net/tv/${videoUrl}/${season}/${episode}`,
-      },
       {
         name: "FullHD",
         url: `https://player.videasy.net/tv/${videoUrl}/${season}/${episode}?nextEpisode=false&autoplayNextEpisode=false&episodeSelector=false&color=#E50914`,

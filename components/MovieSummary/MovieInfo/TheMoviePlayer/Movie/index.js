@@ -5,7 +5,12 @@ import Cookies from "js-cookie"
 
 
 const MoviePlayer = ({ videoUrl }) => {
-  const servers = [{
+  const servers = [
+    {
+      name: "111Movies",
+      url: `https://111movies.net/movie/${videoUrl}`,
+    },
+    {
       name: "VidSrcSh",
       url: `https://vidsrc.sh/embed/movie/${videoUrl}?autoPlay=true`,
     },
@@ -32,10 +37,6 @@ const MoviePlayer = ({ videoUrl }) => {
     {
       name: "videasy",
       url: `https://player.videasy.net/movie/${videoUrl}`,
-    },
-    {
-      name: "111Movies",
-      url: `https://111movies.net/movie/${videoUrl}`,
     },
   ]
 
